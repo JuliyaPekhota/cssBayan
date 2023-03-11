@@ -6,3 +6,97 @@
 html {
     scroll-behavior: smooth; 
 }
+
+@font-face {
+    font-family: 'InterBold';
+    font-style: bold;
+    font-weight: 900;
+    src: url('./fonts/Inter-ExtraBold.ttf') format('truetype');
+}
+
+html, body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #f6f6ed;
+    font-family: 'InterBold', sans-serif;
+    font-size: 14px;
+}
+
+input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+  }
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+h1 {
+    font-size: 35px;
+    margin: 40px 0 16px 0;
+}
+
+.accordion:hover {
+    cursor: pointer;
+}
+
+.accordion:hover .tab .accordionLabel {
+    color: black;
+ }
+
+.accordion:hover .accordionLabel::after {
+    display: block;
+ }
+
+ .accordionLabel {
+    display: flex;
+    width: 100%;
+    font-size: 1.2rem;
+    position: relative;
+    cursor: pointer;
+ }
+
+ .accordionLabel::after {
+    content: "+";
+    display: none;
+
+    position: absolute;
+    right: 0;
+    font-size: 1.8rem;
+    top: -0.4rem;
+ }
+
+ .tab {
+    display: flex;
+    width: 100%;
+    padding: 1.4rem 0;
+    border-top: 1px solid #d3d9e1;
+ }
+
+ .tab .accordionLabel {
+    color: #1e5cd1;
+ }
+
+ input:checked + .accordionLabel {
+    color: black;
+ }
+
+ input:checked + .accordionLabel::after {
+    transform: rotate(45deg);
+ }
+
+ input .content {
+    max-height: 0;
+    transition: all 0.35s;
+ }
+
+ input:checked ~ .content {
+    max-height: 100vh;
+}
+ 
