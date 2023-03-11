@@ -60,63 +60,62 @@ h1 {
     cursor: pointer;
 }
 
-.accordion:hover .tab .accordionLabel,
-input:checked + .accordionLabel {
+.accordion:hover .tab .label,
+input:checked + .label {
     color: black;
 }
 
-.accordion:hover .accordionLabel::after {
+.accordion:hover .label .title::after {
     display: block;
     transform: rotate(45deg);
  }
 
- .accordionLabel {
+ .label {
     display: flex;
     width: 100%;
     font-size: 1.3rem;
     cursor: pointer;
-    padding: 1.4rem 0;
+    padding: 1.4rem 0 0;
     justify-content: space-between;
+    flex-direction: column;
  }
 
- .accordionLabel::after {
+ .label .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1.4rem;
+ }
+
+ .label .title::after {
     font-family: "FontAwesome";
     content: "\f00d";
     display: none;
  }
 
- .accordion:hover .tab:active .accordionLabel,
- .tab .accordionLabel {
+ .accordion:hover .tab:active .label .title,
+ .tab .label {
     color: #1e5cd1;
  }
 
- .tab:hover .accordionLabel::after,
- input:checked + .accordionLabel::after {
+ .tab:hover .label .title::after,
+ input:checked + .label::after {
     transform: rotate(90deg);
  }
 
-.tab .content {
-    max-height: 0;
-    transition: all 0.35s;
-    display: flex;
-    width: 100%;
-    justify-content: center;
- }
-
-.tab:hover .content,
-input:checked ~ .content {
+.tab:hover .label .image,
+input:checked ~ .label .image {
+    margin: 0 auto 1.4rem;
     max-height: 100vh;
+    transform: scale(1);
 }
 
-.tab .content img {
-    padding-bottom: 20px;
+.tab .label .image {
+    display: block;
+    margin: 0 auto;
+    max-height: 0;
     transform: scale(0);
     transition: transform 0.35s;
-}
-
-.tab:hover .content img,
-input:checked ~ .content img {
-    transform: scale(1);
 }
 
 .tab:active {
