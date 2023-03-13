@@ -126,6 +126,17 @@ input:checked ~ .label .image {
     opacity: 0.7;
 }
 
+.aboveHead {
+    display: flex;
+    justify-content: center;
+}
+.aboveHead a{
+    font-size: 0.8rem;
+    padding: 1rem 0;
+    color: #000;
+    text-decoration: none;
+}
+
 @media only screen and (max-width : 768px) {
     .container {
         max-width: 80%;
